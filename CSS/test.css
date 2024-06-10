@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(rgba(5,10,30,0.7),rgba(5,10,30,0.7)), url("../IMG/Illustrations/Bergine_Lac.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    padding: 0px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+header .logo {
+    font-weight: bolder;
+    font-size: 25px;
+    color: white;
+}
+
+header nav ul li {
+    position: relative;
+    float: left;
+}
+
+header nav ul li a {
+    font-size: 20px;
+    padding: 20px;
+    color: black;
+    display: block;
+}
+
+header nav ul li a:hover {
+    background: black;
+    color: white;
+}
+
+header nav ul li ul {
+    position: absolute;
+    left: 0;
+    width: 200px;
+    background: white;
+    display: none;
+}
+
+header nav ul li ul li {
+    width: 100%;
+    border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+header nav ul li:focus-within > ul, header nav ul li:hover > ul {
+    display: initial;
+}
+
+#menu {
+    display: none;
+}
+
+header label {
+    font-size: 20px;
+    color: black;
+    cursor: pointer;
+    display: none;
+}
+
+@media(max-width:1000px) {
+    header {
+        padding: 20px;
+    }
+
+    header label {
+        display: initial;
+    }
+
+    header nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        border-top: 1px solid rgba(0,0,0,0.1);
+        display: none;
+    }
+
+    header nav ul li {
+        width: 100%;
+    }
+
+    header nav ul li ul {
+        position: relative;
+        width: 100%;
+    }
+
+    header nav ul li ul li {
+        background: white;
+    }
+
+    #menu:checked ~ nav {
+        display: initial;
+    }
+}

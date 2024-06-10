@@ -1,0 +1,376 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/* ////////////////////////////////////////////////// [ Header ] \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+header {
+    min-height: 100vh;
+    height: 100vh;
+    width: 100%;
+	background: rgba(0,0,0,0.9);
+}
+	
+.headerBG {
+	background: linear-gradient(rgba(5,10,30,0.7),rgba(5,10,30,0.7)), url("../IMG/Illustrations/Bergine_Lac.jpg");
+	background-size: cover;
+	background-position: center;
+}
+
+.quetzalcoaltBG {
+	background: linear-gradient(rgba(5,10,30,0.7),rgba(5,10,30,0.7)), url("../IMG/Quetzalcoalt/serpent-6.jpg");
+	background-size: cover;
+	background-position: center;
+}
+
+.leMondeDeHanaBG {
+	background: linear-gradient(rgba(5,10,30,0.7),rgba(5,10,30,0.7)), url("../IMG/LeMondeDeHana/background.jpg");
+	background-size: cover;
+	background-position: center;
+}
+
+.laRouteDeLaSoieBG {
+	background: linear-gradient(rgba(5,10,30,0.7),rgba(5,10,30,0.7)), url("../IMG/LaRouteDeLaSoie/La_Route_De_La_Soie-1.jpg");
+	background-size: cover;
+	background-position: center;
+}
+
+.enPleinCoeurBG {
+	background: linear-gradient(rgba(5,10,30,0.7),rgba(5,10,30,0.7)), url("../IMG/EnPleinCoeur/En_Plein_Coeur-2.png");
+	background-size: cover;
+	background-position: center;
+}
+
+.title {
+    height: calc(100vh - 60px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.title h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.title p {
+    background: #9a99ff;
+	padding: 0 5px;
+}
+
+/* ////////////////////////////////////////////////// [ Navbar ] \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    padding: 15px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: top 0.3s;
+    z-index: 1000;
+}
+
+/* -------------------------------------------------- [ Logo ] -------------------------------------------------- */
+.logo {
+    color: white;
+    font-size: 30px;
+}
+
+/* -------------------------------------------------- [ Nav Links ] -------------------------------------------------- */
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    font-size: 20px;
+    padding: 20px;
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+nav ul li a:hover {
+    color: #9a99ff;
+    transition: 0.5s;
+}
+
+nav ul li.active {
+    font-weight: 800;
+}
+
+nav ul li.active a {
+    color: #9a99ff;
+    font-weight: 800;
+}
+
+nav ul li ul li a {
+    color: white;
+}
+
+nav ul li ul li.active a {
+    color: #9a99ff;
+}
+
+nav ul li ul {
+    position: absolute;
+    left: 0;
+    width: 200px;
+    background: rgba(0, 0, 0, 0.75);
+    display: none;
+}
+
+nav ul li ul li {
+    width: 100%;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+nav ul li:focus-within > ul, nav ul li:hover > ul {
+    display: block;
+}
+
+#menu {
+    display: none;
+    z-index: 10000;
+}
+
+nav label {
+    font-size: 25px;
+    color: white;
+    cursor: pointer;
+    display: none;
+}
+
+@media screen and (max-width: 1000px) {
+    .navLinks {
+        top: 0;
+        left: 0 ;
+        position: absolute;
+        background-color: rgba(5,10,30,0.7);
+        backdrop-filter: blur(10px);
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: -100%;
+        transition: all 0.5s ease;
+    }
+    
+    .navLinks ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navLinks ul li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .mobileMenu {
+        margin-left: 0;
+    }
+
+    nav label {
+        display: block;
+        z-index: 1000;
+    }
+
+    nav ul li ul {
+        position: relative;
+        width: 100%;
+    }
+
+    nav ul li a {
+        padding: 12px;
+    } 
+}
+
+/* ////////////////////////////////////////////////// [ Sections ] \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+section {
+	padding: 25px 20px;
+	margin: auto;
+}
+
+section h2 {
+	font-size: 30px;
+	text-align: center;
+}
+
+section h3 {
+	text-align: center;
+	font-size: 25px;
+}
+
+/* -------------------------------------------------- [ Illustrations ] -------------------------------------------------- */
+.illustrations {
+    margin: auto;
+}
+.gallery {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+}
+
+.gallery img {
+	width: 90%;
+}
+
+/* -------------------------------------------------- [ School Projects ] -------------------------------------------------- */
+.schoolProjects {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	padding: 25px 10px;
+	text-align: center;
+}
+
+.pleinCoeur h3, .mondeDeHana h3, .Quetzalcoalt h3, .routeDeLaSoie h3 {
+	padding-top: 25px;
+	font-size: 25px;
+}
+
+.pleinCoeur img, .mondeDeHana img, .Quetzalcoalt img, .routeDeLaSoie img {
+	width: 95%;
+}
+
+/* -------------------------------------------------- [ 2D Animation ] -------------------------------------------------- */
+.animations {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	padding: 25px 10px;
+}
+
+.animations video{
+	width: 95%;
+}
+
+.presentation {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+}
+
+.presentation p {
+	padding: 20px;
+}
+
+/* -------------------------------------------------- [ Projects ] -------------------------------------------------- */
+.projectIntro img, .projectIntro video, .characters img, .QuetzalcoaltImg img, .posterImg img, .chabiImg img, .kuasangImg img, .lineupImg img {
+	padding: 50px 100px;
+	width: 100%;
+}
+
+/* -------------------------------------------------- [ Le Monde De Hana ] -------------------------------------------------- */
+.hanaImg, .soraImg {
+    display: grid;
+	grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    align-items: center;
+}
+
+.hanaImg img, .soraImg img {
+	width: 90%;
+}
+
+.animations, .presentation, .storyboardImg, .colorscriptImg, .dayaImg, .xnastaseiyImg, .choeruskerabosImg, .rodensvenenosusImg, .conceptArtImg, .decorsImg {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	justify-items: center;
+    align-items: center;
+	padding: 25px 10px;
+}
+
+.storyboardImg img, .colorscriptImg img, .dayaImg img, .xnastaseiyImg img, .choeruskerabosImg img, .rodensvenenosusImg img, .conceptArtImg img, .decorsImg img {
+    width: 90%;
+	padding: 10px;
+}
+
+@media screen and (max-width: 1000px) {
+	.hanaImg, .soraImg, .animations, .presentation, .storyboardImg, .colorscriptImg, .dayaImg, .xnastaseiyImg, .choeruskerabosImg, .rodensvenenosusImg, .conceptArtImg, .decorsImg, .schoolProjects {
+		grid-template-columns: repeat(1, 1fr);
+	}
+
+	.gallery {
+		max-width: 1100px;
+		margin: 0 auto;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 2vmin;
+		padding: 0 14px;
+	}
+
+	.title h1 {
+		font-size: 40px;
+	}
+	
+    .storyboardImg img, .colorscriptImg img, .dayaImg img, .xnastaseiyImg img, .choeruskerabosImg img, .rodensvenenosusImg img, .conceptArtImg img, .decorsImg img {
+        width: 100%;
+    }
+
+    .projectIntro img, .projectIntro video, .characters img, .QuetzalcoaltImg img, .posterImg img, .chabiImg img, .kuasangImg img, .lineupImg img {
+        padding: 0;
+    }
+}
+
+/* ////////////////////////////////////////////////// [ Footer ] \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+footer {
+	background-color: black;
+	width: 100%;
+	padding: 70px 30px 20px;
+}
+
+.credit {
+	letter-spacing: 1px;
+	color: white;
+	text-align: center;
+	padding-bottom: 20px;
+}
+
+.socialIcons {
+	display: flex;
+	justify-content: center;
+}
+
+.socialIcons a {
+	padding: 10px;
+	background-color: white;
+	margin: 10px;
+	border-radius: 50%;
+}
+
+.socialIcons a i {
+	font-size: 2em;
+	color: black;
+	opacity: 0.9;
+}
+
+.socialIcons a:hover {
+	background-color: #111;
+	transition: 0.5s;
+}
+
+.socialIcons a:hover i {
+	color: white;
+	transition: 0.5s;
+}
